@@ -162,11 +162,81 @@ python manage.py runserver
 python manage.py startapp blog
 ```
 
+现在你的目录结构应该是这样的：
+
+```txt
+├── backend
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── blog
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── manage.py
+```
+
+8. 启用Blog 应用（Enable the Django Blog Applicatioin）
+
+```python
+INSTALLED_APPS = [
+    # ...
+    'blog',
+]
+```
+
+### 前端工程
+
+1. 安装@vue/cli
+
+略
+
+2. 创建前端工程
+
+```bash
+vue create frontend
+```
+
+选择Vue3工程
+
+将`node_modules`文件夹添加至`.gitignore`文件中
+
+```bash
+cd frontend
+yarn serve
+```
+
 ## 常用操作
 
-* 导出依赖包
+### 收集静态文件
+
+```bash
+python manage.py collectstatic
+```
+
+### uwsgi 启动python应用程序
+
+```bash
+uwsgi --http :4000 --wsgi-file test.py
+uwsgi --http :4000 --module hello.wsgi --virtualenv=/root/Env/mwd
+```
+
+### 导出python依赖包
 
 ```bash
 pip freeze > requirements.txt
 ```
 
+### 开启gulp任务
+
+```bash
+cd front
+gulp
+```
