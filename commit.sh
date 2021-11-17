@@ -27,7 +27,7 @@ fi
 
 git add .
 git commit -m "$comment"
-git push github
+git push origin
 git push gitee
 git push gitlab
 echo "commit ok"
