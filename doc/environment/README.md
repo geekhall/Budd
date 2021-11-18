@@ -13,6 +13,7 @@ _Read this in other languages:_
 |@vue/cli|4.5.15|
 |Django|3.2.9|
 |Vue|3.2.16|
+|Vite|2.6.14|
 |Yarn|1.22.17|
 
 ## 搭建初始化环境
@@ -199,7 +200,24 @@ INSTALLED_APPS = [
 
 1. 安装@vue/cli
 
-略
+```bash
+yarn global add @vue/cli@next
+# OR
+npm install -g @vue/cli@next
+```
+
+运行以下命令，检测是否安装成功
+
+```bash
+vue -V
+```
+
+说明是安装成功的，这里注意以下，@vue/cli的版本一定要大于4.0才能创建vue3的项目，若版本较低，记得升级。
+
+注：
+
+* Vue2版本: yarn global add vue-cli
+* Vue3版本: yarn global add @vue/cli
 
 2. 创建前端工程
 
@@ -219,6 +237,13 @@ yarn serve
 ```bash
 # 创建工程
 brew install vite
+# 使用 npm
+npm init vite-app <project-name> cd <project-name>
+# 运行
+npm install
+npm run dev
+
+# 使用 yarn
 yarn create vite frontend --template vue
 
 # 运行
@@ -230,19 +255,37 @@ yarn serve  # 5000端口
 
 将`node_modules`文件夹添加至`.gitignore`文件中
 
-1. 添加element-ui组件
+3. 添加项目依赖的组件
 
 ```bash
 # 选择一个你喜欢的包管理器
 
 # NPM
-$ npm install element-plus --save
+$ npm install vue-router@next vuex@next element-plus axios --save
 
 # Yarn
-$ yarn add element-plus
+$ yarn add vue-router@next vuex@next element-plus axios -S
 
 # pnpm
-$ pnpm install element-plus
+$ pnpm install vue-router@next vuex@next element-plus axios
+```
+
+### 集成element plus
+
+修改`main.js`为如下：
+
+```javascript
+import { createApp } from 'vue'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.use(ElementPlus)
+app.mount('#app')
+// createApp(App).mount('#app')
+
 ```
 
 ## 常用操作
@@ -272,3 +315,26 @@ pip freeze > requirements.txt
 cd front
 gulp
 ```
+
+### 前端获取项目中的环境变量
+
+```bash
+# vue2获取环境变量：
+process.env.VUE_APP_ENV
+
+# vue3+ vite 获取环境变量：
+import.meta.env
+```
+
+
+
+## 使用到的vscode 插件
+
+
+|VSCode Plugin| 作用 |
+|----|----|
+|markdownlint|用于检查markdown语法格式是否规范。|
+|Volar|Vue语言特色高性能工具。|
+|Prettier|代码格式化美化工具。|
+|ESLint|语法检查工具。|
+
