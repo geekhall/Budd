@@ -3,7 +3,7 @@
 _Read this in other languages:_
 [_English_](README.en-US.md)
 
-## 软件版本
+## 主要软件版本
 
 |Dependencies|Version|
 |----|----|
@@ -12,6 +12,8 @@ _Read this in other languages:_
 |pip|21.2.4|
 |@vue/cli|4.5.15|
 |Django|3.2.9|
+|Vue|3.2.16|
+|Yarn|1.22.17|
 
 ## 搭建初始化环境
 
@@ -201,20 +203,34 @@ INSTALLED_APPS = [
 
 2. 创建前端工程
 
+* Vue方式
+
 ```bash
+# 创建工程
 vue create frontend
-```
 
-选择Vue3工程
-
-将`node_modules`文件夹添加至`.gitignore`文件中
-
-```bash
+# 运行
 cd frontend
 yarn serve
 ```
 
-3. 添加element-ui组件
+* Vite方式
+
+```bash
+# 创建工程
+brew install vite
+yarn create vite frontend --template vue
+
+# 运行
+cd frontend
+yarn
+yarn dev    # 3000端口
+yarn serve  # 5000端口
+```
+
+将`node_modules`文件夹添加至`.gitignore`文件中
+
+1. 添加element-ui组件
 
 ```bash
 # 选择一个你喜欢的包管理器
