@@ -113,6 +113,7 @@ export mysql_budd_password="your password"
 6. 运行Django迁移命令
 
 ```bash
+cd backend
 python manage.py migrate
 ```
 
