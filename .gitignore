@@ -131,3 +131,4 @@ dmypy.json
 # Private file
 doc/environment/Private.md
 frontend/node_modules
+backend/static_dist
