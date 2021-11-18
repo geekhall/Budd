@@ -326,10 +326,7 @@ process.env.VUE_APP_ENV
 import.meta.env
 ```
 
-
-
 ## 使用到的vscode 插件
-
 
 |VSCode Plugin| 作用 |
 |----|----|
@@ -337,4 +334,3 @@ import.meta.env
 |Volar|Vue语言特色高性能工具。|
 |Prettier|代码格式化美化工具。|
 |ESLint|语法检查工具。|
-
