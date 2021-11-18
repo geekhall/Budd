@@ -1,17 +1,13 @@
 <script setup>
 import { ref } from 'vue'
 
-defineProps({
-  msg: String
-})
-
 const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>Demo</h1>
   <el-row>
-    <el-button type="primary">Primary</el-button>
+    <el-button type="primary">Demo</el-button>
   </el-row>
 </template>
 

@@ -10,6 +10,7 @@ _Read this in other languages:_
 |Anaconda|4.10.1|
 |Python|3.8.12|
 |pip|21.2.4|
+|Node|15.4.0|
 |@vue/cli|4.5.15|
 |Django|3.2.9|
 |Vue|3.2.16|
@@ -198,9 +199,14 @@ INSTALLED_APPS = [
 
 ### 前端工程
 
-1. 安装@vue/cli
+1. 命令行工具（@vue/cli）
+
+Vue 提供了一个官方的 CLI，为单页面应用 (SPA) 快速搭建繁杂的脚手架。
+它为现代前端工作流提供了功能齐备的构建设置。
+只需要几分钟的时间就可以运行起来并带有热重载、保存时 lint 校验，以及生产环境可用的构建版本。
 
 ```bash
+# 安装
 yarn global add @vue/cli@next
 # OR
 npm install -g @vue/cli@next
@@ -219,7 +225,13 @@ vue -V
 * Vue2版本: yarn global add vue-cli
 * Vue3版本: yarn global add @vue/cli
 
-2. 创建前端工程
+2. Vite
+
+Vite 是一个 web 开发构建工具，由于其原生 ES 模块导入方式，可以实现闪电般的冷服务器启动。
+
+通过在终端中运行以下命令，可以使用 Vite 快速构建 Vue 项目。
+
+3. 创建前端工程
 
 * Vue方式
 
@@ -232,25 +244,32 @@ cd frontend
 yarn serve
 ```
 
-* Vite方式
+* 使用Vite快速创建Vue项目：
+
+使用npm：
 
 ```bash
-# 创建工程
-brew install vite
-# 使用 npm
-npm init vite-app <project-name> cd <project-name>
-# 运行
-npm install
-npm run dev
+# npm 6.x
+$ npm init vite@latest <project-name> --template vue
 
-# 使用 yarn
-yarn create vite frontend --template vue
+# npm 7+，需要加上额外的双短横线
+$ npm init vite@latest <project-name> -- --template vue
+
+$ cd <project-name>
+$ npm install
+$ npm run dev
+```
+
+使用 yarn
+
+```bash
+# 创建工程，这里<project-name> 为frontend
+yarn create vite <project-name> --template vue
 
 # 运行
-cd frontend
+cd <project-name>
 yarn
 yarn dev    # 3000端口
-yarn serve  # 5000端口
 ```
 
 将`node_modules`文件夹添加至`.gitignore`文件中
