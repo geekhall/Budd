@@ -214,6 +214,21 @@ cd frontend
 yarn serve
 ```
 
+3. 添加element-ui组件
+
+```bash
+# 选择一个你喜欢的包管理器
+
+# NPM
+$ npm install element-plus --save
+
+# Yarn
+$ yarn add element-plus
+
+# pnpm
+$ pnpm install element-plus
+```
+
 ## 常用操作
 
 ### 收集静态文件
