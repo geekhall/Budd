@@ -12,7 +12,7 @@
   >
     <el-menu-item index="1">
         <a href="#">
-        <img class="logo" src="@/assets/logo.png" alt="" />
+        <img class="logo" src="@/assets/geekhall_logo_128.png" alt="" />
     </a>
     </el-menu-item>
     <!-- <el-sub-menu index="2">
